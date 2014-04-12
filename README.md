@@ -1,4 +1,2 @@
-tap
+Homebrew Tap
 ===
-
-Homebrew tap
