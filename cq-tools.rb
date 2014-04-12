@@ -11,14 +11,16 @@ class CqTools < Formula
   # Also depends on Java 7! Not sure if we can do much about it here
 
   depends_on 'ruby'
-  depends_on 'json' => :ruby
-  depends_on 'nokogiri' => :ruby
-  depends_on 'active_support' => :ruby
 
   # This is really optional based on if the user will use cq-sync or not
   depends_on 'directory-watcher'
 
   def install
+
+    system 'gem', 'install', 'json'
+    system 'gem', 'install', 'nokogiri'
+    system 'gem', 'install', 'activesupport'
+
     bin.install 'brewpath'
     bin.install 'cq-checklib'
     bin.install 'cq-common.rb'
@@ -33,13 +35,12 @@ class CqTools < Formula
     bin.install 'cq-stop'
     bin.install 'cq-sync'
     bin.install 'cq-tail'
+
     # config files
     home_dir = File.expand_path '~'
-    puts `ls -la #{buildpath}`
-    # FileUtils.copy(File.join(buildpath, 'conf/.cq-env'), home_dir)
-    # FileUtils.copy(File.join(buildpath, 'conf/.cq-cfg'), home_dir)
     FileUtils.copy('conf/.cq-env', home_dir)
     FileUtils.copy('conf/.cq-cfg', home_dir)
+
   end
 
   def caveats
