@@ -44,18 +44,16 @@ class CqTools < Formula
   def caveats
     <<-EOS.undent
 
-    cq-tools configuration files were created.
+    cq-tools configuration files were created - note: Java 7 is required for cq-sync.
 
-    You *MUST* configure the system before using these tools.
-
-    Note: Java 7 is required for cq-sync.
+    You *MUST* configure the system before using these tools!!
 
     1. Add 'source ~/.cq/env' to ~/.bash_profile
-    2. Edit ~/.cq-cfg to your requirements, adding as many servers and/or branches as required
-    3. Run: cq-set-server and choose the server you want to use for the current session
-    4. Run: cq-set-branch and choose the branch you want to use for the current session
+    2. Edit ~/.cq/cfg to your requirements, adding as many servers and/or workspaces as required
+    2. Run: cq-set-server and choose the server you want to use for the current session
+    3. Run: cq-set-workspace and choose the workspace you want to use for the current session
 
-    These scripts effectively manage the .cq-env file for you based on your configuration settings.
+    These scripts effectively manage the ~/.cq/env file for you based on your configuration settings.
 
     ### More information
     You can read more on the cq-tools here: https://github.com/joshes/cq-tools
