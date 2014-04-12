@@ -37,9 +37,7 @@ class CqTools < Formula
     bin.install 'cq-tail'
 
     # config files
-    home_dir = File.expand_path '~'
-    FileUtils.copy('conf/.cq-env', home_dir)
-    FileUtils.copy('conf/.cq-cfg', home_dir)
+    FileUtils.copy '.cq', File.expand_path '~'
 
   end
 
