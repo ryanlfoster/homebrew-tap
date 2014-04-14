@@ -29,9 +29,9 @@ class CqTools < Formula
 
   def install
 
-    # system 'gem', 'install', 'json'
-    # system 'gem', 'install', 'nokogiri'
-    # system 'gem', 'install', 'activesupport'
+    system 'gem', 'install', 'json'
+    system 'gem', 'install', 'nokogiri'
+    system 'gem', 'install', 'activesupport'
 
     bin.install 'cq-build'
     bin.install 'cq-checklib'
