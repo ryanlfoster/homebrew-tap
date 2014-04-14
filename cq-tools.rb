@@ -11,6 +11,10 @@ class CqTools < Formula
   # Also depends on Java 7! Not sure if we can do much about it here
 
   depends_on 'ruby'
+  depends_on 'json' => :ruby
+  depends_on 'nokogiri' => :ruby
+  depends_on 'activesupport' => :ruby
+
 
   # This is really optional based on if the user will use cq-sync or not
   depends_on 'directory-watcher'
@@ -25,11 +29,11 @@ class CqTools < Formula
 
   def install
 
-    # TODO need to check if these are already installed ...
-    system 'gem', 'install', 'json'
-    system 'gem', 'install', 'nokogiri'
-    system 'gem', 'install', 'activesupport'
+    # system 'gem', 'install', 'json'
+    # system 'gem', 'install', 'nokogiri'
+    # system 'gem', 'install', 'activesupport'
 
+    bin.install 'cq-build'
     bin.install 'cq-checklib'
     bin.install 'cq-clean'
     bin.install 'cq-kill'
@@ -41,7 +45,6 @@ class CqTools < Formula
     bin.install 'cq-stop'
     bin.install 'cq-sync'
     bin.install 'cq-tail'
-    bin.install 'cq_build.rb'
     bin.install 'cq_common.rb'
     bin.install 'cq_configuration.rb'
     bin.install 'cq_configuration_setter.rb'
