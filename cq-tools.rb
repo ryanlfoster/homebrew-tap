@@ -15,6 +15,14 @@ class CqTools < Formula
   # This is really optional based on if the user will use cq-sync or not
   depends_on 'directory-watcher'
 
+  def copy_unless_there(check, src, dst)
+    if File.exists? check
+      puts "Not overwriting existing file at: #{check}"
+    else
+      FileUtils.copy(src, dst)
+    end
+  end
+
   def install
 
     # TODO need to check if these are already installed ...
@@ -42,9 +50,15 @@ class CqTools < Formula
     # config files
     home_dir = File.expand_path('~')
     dest_dir = File.join(home_dir, '.cq')
-    FileUtils.makedirs(dest_dir)
-    FileUtils.copy('.cq/env', dest_dir)
-    FileUtils.copy('.cq/cfg', dest_dir)
+    env_file = File.join(dest_dir, 'env')
+    cfg_file = File.join(dest_dir, 'cfg')
+
+    if !File.exists? dest_dir
+      FileUtils.makedirs(dest_dir)
+    end
+
+    copy_unless_there env_file, '.cq/env', dest_dir
+    copy_unless_there cfg_file, '.cq/cfg', dest_dir
 
   end
 
