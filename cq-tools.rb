@@ -17,6 +17,7 @@ class CqTools < Formula
 
   def install
 
+    # TODO need to check if these are already installed ...
     system 'gem', 'install', 'json'
     system 'gem', 'install', 'nokogiri'
     system 'gem', 'install', 'activesupport'
