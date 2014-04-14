@@ -42,7 +42,8 @@ class CqTools < Formula
     home_dir = File.expand_path('~')
     dest_dir = File.join(home_dir, '.cq')
     FileUtils.makedirs(dest_dir)
-    FileUtils.copy('.cq/*', dest_dir)
+    FileUtils.copy('.cq/env', dest_dir)
+    FileUtils.copy('.cq/cfg', dest_dir)
 
   end
 
