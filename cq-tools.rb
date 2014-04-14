@@ -5,8 +5,8 @@ class CqTools < Formula
 
   version '1.3'
   homepage 'https://github.com/joshes/cq-tools'
-  url 'https://github.com/joshes/cq-tools/archive/1.3.zip'
-  sha1 'c58feba375cb5c7fbed76a4977f02931f8205bec'
+  url 'https://github.com/joshes/cq-tools/archive/1.4.zip'
+  sha1 '3a64e4c0503b31b588d8b86b582784cbb67ad71d'
 
   # Also depends on Java 7! Not sure if we can do much about it here
 
