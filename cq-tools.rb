@@ -5,8 +5,8 @@ class CqTools < Formula
 
   version '1.1'
   homepage 'https://github.com/joshes/cq-tools'
-  url 'https://github.com/joshes/directory-watcher/releases/download/directory-watcher-1.1/DirectoryWatcher.jar'
-  sha1 '0e804fb61ffd22c80ec39e68b8d03167b32d2c22'
+  url 'https://github.com/joshes/cq-tools/archive/1.1.zip'
+  sha1 '01be7c715379f23d442316a2561f1c38843aad39'
 
   # Also depends on Java 7! Not sure if we can do much about it here
 
@@ -39,7 +39,7 @@ class CqTools < Formula
     bin.install 'cq_filewatch_handler.rb'
 
     # config files
-    FileUtils.copy '.cq', File.expand_path '~'
+    FileUtils.copy '.cq', File.expand_path('~')
 
   end
 
