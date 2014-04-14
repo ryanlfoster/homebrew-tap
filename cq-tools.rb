@@ -11,9 +11,9 @@ class CqTools < Formula
   # Also depends on Java 7! Not sure if we can do much about it here
 
   depends_on 'ruby'
-  depends_on 'json' => :ruby
-  depends_on 'nokogiri' => :ruby
-  depends_on 'activesupport' => :ruby
+  # depends_on 'json' => :ruby
+  # depends_on 'nokogiri' => :ruby
+  # depends_on 'activesupport' => :ruby
 
 
   # This is really optional based on if the user will use cq-sync or not
