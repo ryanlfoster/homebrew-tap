@@ -5,8 +5,8 @@ class CqTools < Formula
 
   version '1.0'
   homepage 'https://github.com/joshes/cq-tools'
-  url 'https://github.com/joshes/cq-tools/archive/1.0.tar.gz'
-  sha1 'b6b1cc167330e4e89a040ac3bc12ba167daca2b7'
+  url 'https://github.com/joshes/directory-watcher/releases/download/directory-watcher-1.1/DirectoryWatcher.jar'
+  sha1 '0e804fb61ffd22c80ec39e68b8d03167b32d2c22'
 
   # Also depends on Java 7! Not sure if we can do much about it here
 
