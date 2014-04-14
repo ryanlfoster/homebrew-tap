@@ -3,7 +3,7 @@ require 'fileutils'
 
 class CqTools < Formula
 
-  version '1.3'
+  version '1.4'
   homepage 'https://github.com/joshes/cq-tools'
   url 'https://github.com/joshes/cq-tools/archive/1.4.zip'
   sha1 '3a64e4c0503b31b588d8b86b582784cbb67ad71d'
