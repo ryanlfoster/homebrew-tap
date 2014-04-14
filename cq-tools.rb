@@ -39,7 +39,10 @@ class CqTools < Formula
     bin.install 'cq_filewatch_handler.rb'
 
     # config files
-    FileUtils.copy '.cq', File.expand_path('~')
+    home_dir = File.expand_path('~')
+    dest_dir = File.join(home_dir, '.cq')
+    FileUtils.makedirs(dest_dir)
+    FileUtils.copy('.cq/*', dest_dir)
 
   end
 
