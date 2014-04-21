@@ -1,5 +1,6 @@
 require 'formula'
 require 'fileutils'
+require 'rubygems'
 
 class CqTools < Formula
 
@@ -27,11 +28,19 @@ class CqTools < Formula
     end
   end
 
+  def local_gems
+    Gem::Specification.sort_by{ |g| [g.name.downcase, g.version] }.group_by{ |g| g.name }
+  end
+
+  def is_not_installed?(gem)
+    !local_gems[gem]
+  end
+
   def install
 
-    system 'gem', 'install', 'json'
-    system 'gem', 'install', 'nokogiri'
-    system 'gem', 'install', 'activesupport'
+    system 'gem', 'install', 'json' if is_not_installed? 'json'
+    system 'gem', 'install', 'nokogiri' if is_not_installed? 'nokogiri'
+    system 'gem', 'install', 'activesupport' if is_not_installed? 'activesupport'
 
     bin.install 'cq-build'
     bin.install 'cq-checklib'
