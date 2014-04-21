@@ -29,7 +29,7 @@ class CqTools < Formula
   end
 
   def local_gems
-    Gem::Specification.sort_by{ |g| [g.name.downcase, g.version] }.group_by{ |g| g.name }
+    Gem::Specification.all.map { |g| g.name.downcase }
   end
 
   def is_not_installed?(gem)
