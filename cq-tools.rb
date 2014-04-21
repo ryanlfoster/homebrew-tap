@@ -1,6 +1,5 @@
 require 'formula'
 require 'fileutils'
-require 'rubygems'
 
 class CqTools < Formula
 
@@ -12,10 +11,6 @@ class CqTools < Formula
   # Also depends on Java 7! Not sure if we can do much about it here
 
   depends_on 'ruby'
-  # depends_on 'json' => :ruby
-  # depends_on 'nokogiri' => :ruby
-  # depends_on 'activesupport' => :ruby
-
 
   # This is really optional based on if the user will use cq-sync or not
   depends_on 'directory-watcher'
@@ -33,7 +28,7 @@ class CqTools < Formula
   end
 
   def is_not_installed?(gem)
-    !local_gems[gem]
+    `gem list | grep -c '#{gem}'`.chomp == '0'
   end
 
   def install
