@@ -3,10 +3,10 @@ require 'fileutils'
 
 class CqTools < Formula
 
-  version '1.4'
+  version '1.5'
   homepage 'https://github.com/joshes/cq-tools'
-  url 'https://github.com/joshes/cq-tools/archive/1.4.zip'
-  sha1 '3a64e4c0503b31b588d8b86b582784cbb67ad71d'
+  url 'https://github.com/joshes/cq-tools/archive/1.5.zip'
+  sha1 '31479abcab3ba77cda00d8e49ce5f138f16f1cc8'
 
   # Also depends on Java 7! Not sure if we can do much about it here
 
