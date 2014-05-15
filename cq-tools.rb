@@ -3,7 +3,7 @@ require 'fileutils'
 
 class CqTools < Formula
 
-  version '1.7'
+  version '1.8'
   homepage 'https://github.com/joshes/cq-tools'
   url 'https://github.com/joshes/cq-tools/archive/1.6.zip'
   sha1 '2ac59c700a7943dd3b61d14065ebfb084d348115'
@@ -14,6 +14,10 @@ class CqTools < Formula
 
   # This is really optional based on if the user will use cq-sync or not
   depends_on 'directory-watcher'
+
+  depends_on 'json' => :ruby
+  depends_on 'nokogiri' => :ruby
+  depends_on 'activesupport' => :ruby
 
   def copy_unless_there(check, src, dst)
     if File.exists? check
@@ -32,10 +36,6 @@ class CqTools < Formula
   end
 
   def install
-
-    system 'gem', 'install', 'json' if is_not_installed? 'json'
-    system 'gem', 'install', 'nokogiri' if is_not_installed? 'nokogiri'
-    system 'gem', 'install', 'activesupport' if is_not_installed? 'activesupport'
 
     bin.install 'cq-build'
     bin.install 'cq-checklib'
