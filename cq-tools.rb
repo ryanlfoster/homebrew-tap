@@ -3,14 +3,14 @@ require 'fileutils'
 
 class CqTools < Formula
 
-  version '1.6'
+  version '1.7'
   homepage 'https://github.com/joshes/cq-tools'
   url 'https://github.com/joshes/cq-tools/archive/1.6.zip'
   sha1 '2ac59c700a7943dd3b61d14065ebfb084d348115'
 
   # Also depends on Java 7! Not sure if we can do much about it here
 
-  depends_on 'ruby'
+  # depends_on 'ruby'
 
   # This is really optional based on if the user will use cq-sync or not
   depends_on 'directory-watcher'
